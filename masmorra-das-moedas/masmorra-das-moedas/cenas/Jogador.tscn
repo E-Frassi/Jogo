@@ -1,0 +1,22 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" uid="uid://dgh6bpne202ts" path="res://scripts/Jogador.gd" id="1_jog"]
+[ext_resource type="Texture2D" uid="uid://b8f4kq86vnxa8" path="res://assets/sprites/jogador.png" id="2_tex"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jogador"]
+size = Vector2(10, 10)
+
+[node name="Jogador" type="CharacterBody2D" groups=["jogador"]]
+collision_layer = 2
+motion_mode = 1
+script = ExtResource("1_jog")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_tex")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_jogador")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position_smoothing_enabled = true
+position_smoothing_speed = 6.0

@@ -1,0 +1,92 @@
+[gd_scene format=3 uid="uid://d26dyf0xw8et3"]
+
+[ext_resource type="Script" uid="uid://cy0m8yu0cm0pu" path="res://scripts/MenuInicial.gd" id="1_7w58i"]
+
+[node name="MenuInicial" type="Control" unique_id=1103704294]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7w58i")
+
+[node name="Fundo" type="ColorRect" parent="." unique_id=419321229]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.12, 0.13, 0.2, 1)
+
+[node name="Centro" type="CenterContainer" parent="." unique_id=794418423]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Menu" type="VBoxContainer" parent="Centro" unique_id=1530669698]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Titulo" type="Label" parent="Centro/Menu" unique_id=1685741615]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.98, 0.78, 0.16, 1)
+theme_override_font_sizes/font_size = 30
+text = "Masmorra das Moedas"
+horizontal_alignment = 1
+
+[node name="Espaco" type="Control" parent="Centro/Menu" unique_id=1881310612]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="BotaoIniciar" type="Button" parent="Centro/Menu" unique_id=702934176]
+custom_minimum_size = Vector2(170, 30)
+layout_mode = 2
+text = "Iniciar jogo"
+
+[node name="BotaoCreditos" type="Button" parent="Centro/Menu" unique_id=1234094985]
+custom_minimum_size = Vector2(170, 30)
+layout_mode = 2
+text = "Créditos"
+
+[node name="BotaoSair" type="Button" parent="Centro/Menu" unique_id=1006031866]
+custom_minimum_size = Vector2(170, 30)
+layout_mode = 2
+text = "Sair"
+
+[node name="Dicas" type="Label" parent="Centro/Menu" unique_id=1396786901]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7, 0.7, 0.8, 1)
+theme_override_font_sizes/font_size = 12
+text = "WASD/Setas: mover   Espaço: atirar   Esc: pausar"
+horizontal_alignment = 1
+
+[node name="Creditos" type="VBoxContainer" parent="Centro" unique_id=843552175]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="TituloCreditos" type="Label" parent="Centro/Creditos" unique_id=1387351542]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.98, 0.78, 0.16, 1)
+theme_override_font_sizes/font_size = 26
+text = "Créditos"
+horizontal_alignment = 1
+
+[node name="Texto" type="Label" parent="Centro/Creditos" unique_id=846508623]
+layout_mode = 2
+text = "Desenvolvido por: Integrante 1 e Integrante 2
+IFMG - Campus Ribeirão das Neves
+Disciplina: Introdução ao Desenvolvimento de Jogos
+Professora: Camila Laranjeira da Silva
+Engine: Godot 4  |  Arte: pixel art feita para o projeto"
+horizontal_alignment = 1
+
+[node name="BotaoVoltar" type="Button" parent="Centro/Creditos" unique_id=2132454488]
+custom_minimum_size = Vector2(170, 30)
+layout_mode = 2
+text = "Voltar"
