@@ -1,0 +1,57 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://n7e7vse27n3c" path="res://Elementos/arte/tilemap_packed.png" id="1_tex"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_parado"]
+atlas = ExtResource("1_tex")
+region = Rect2(256, 80, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_andando"]
+atlas = ExtResource("1_tex")
+region = Rect2(272, 80, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_player"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_parado")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_parado")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_andando")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_player"]
+size = Vector2(8, 8)
+
+[node name="Player" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_script")
+
+[node name="Animação" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_player")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_player")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
+limit_left = 0
+limit_top = 0
+limit_right = 608
+limit_bottom = 304
+position_smoothing_enabled = true
